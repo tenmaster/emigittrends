@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements HttpClientListene
 
     @Override
     public void onRepositoriesRequestSuccess(ArrayList<GitRepository> repositories) {
-        
+
     }
 
     @Override
