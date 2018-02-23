@@ -45,7 +45,7 @@ public class MainRepositoriesAdapter extends RecyclerView.Adapter<MainRepositori
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-         holder.mRepositoryNameTextview.setText(mRepositoriesDataset.get(position).getDescription());
+         holder.mRepositoryNameTextview.setText(mRepositoriesDataset.get(position).getName());
          holder.mRepositoryStarsTextview.setText(mRepositoriesDataset.get(position).getStarsCount());
 
     }

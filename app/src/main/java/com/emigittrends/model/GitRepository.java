@@ -10,6 +10,8 @@ public class GitRepository {
 
     @SerializedName("id")
     String id;
+    @SerializedName("name")
+    String name;
     @SerializedName("full_name")
     String fullName;
     @SerializedName("description")
@@ -31,8 +33,8 @@ public class GitRepository {
         return id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
@@ -61,5 +63,9 @@ public class GitRepository {
 
     public Owner getOwner() {
         return owner;
+    }
+
+    public String getFullName() {
+        return fullName;
     }
 }
