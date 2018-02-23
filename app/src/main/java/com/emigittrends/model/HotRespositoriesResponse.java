@@ -18,4 +18,8 @@ public class HotRespositoriesResponse {
 
     @SerializedName("items")
     ArrayList<GitRepository> items;
+
+    public ArrayList<GitRepository> getItems() {
+        return items;
+    }
 }
