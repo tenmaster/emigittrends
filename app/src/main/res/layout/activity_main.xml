@@ -12,6 +12,12 @@
         android:layout_height="@dimen/logo_size"
         android:src="@drawable/github_logo"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_activity_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        />
 
 
 </LinearLayout>
