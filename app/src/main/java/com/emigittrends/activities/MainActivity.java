@@ -6,7 +6,6 @@ import android.widget.Toast;
 
 import com.emigittrends.R;
 import com.emigittrends.model.GitRepository;
-import com.emigittrends.model.HotRespositoriesResponse;
 import com.emigittrends.network.EmiHttpClient;
 import com.emigittrends.network.EmiHttpClient.HttpClientListener;
 

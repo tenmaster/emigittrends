@@ -12,4 +12,13 @@ public class Owner {
     String login;
     @SerializedName("avatar_url")
     String avatarUrl;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
 }

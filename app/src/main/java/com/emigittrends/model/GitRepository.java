@@ -27,4 +27,39 @@ public class GitRepository {
     @SerializedName("owner")
     Owner owner;
 
+    public String getId() {
+        return id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getWatchersCount() {
+        return watchersCount;
+    }
+
+    public String getStarsCount() {
+        return starsCount;
+    }
+
+    public String getForks() {
+        return forks;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
 }
