@@ -2,11 +2,13 @@ package com.emigittrends.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by emiliano on 23/02/18.
  */
 
-public class GitRepository {
+public class GitRepository implements Serializable{
 
     @SerializedName("id")
     String id;
