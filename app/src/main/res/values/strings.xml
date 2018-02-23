@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Emi Git Trends</string>
     <string name="error_loading_repositories">Error on the getHotRepositories() method</string>
+
+    <string name="detail_starred">Starred:\u0020</string>
+    <string name="detail_watchers">Watchers:\u0020</string>
+    <string name="detail_forked">Forked:\u0020</string>
 </resources>

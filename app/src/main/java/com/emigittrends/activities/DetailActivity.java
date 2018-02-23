@@ -50,8 +50,8 @@ public class DetailActivity extends AppCompatActivity {
         mNameTextView.setText(repository.getFullName());
         mLanguageTextView.setText(repository.getLanguage());
         mDescriptionTextView.setText(repository.getDescription());
-        mStarredTextView.setText(repository.getStarsCount());
-        mForksTextView.setText(repository.getForks());
-        mWatchersTextView.setText(repository.getWatchersCount());
+        mStarredTextView.setText(getString(R.string.detail_starred) + repository.getStarsCount());
+        mForksTextView.setText(getString(R.string.detail_forked) + repository.getForks());
+        mWatchersTextView.setText(getString(R.string.detail_watchers) + repository.getWatchersCount());
     }
 }
