@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.emigittrends.R;
 import com.emigittrends.model.GitRepository;
 
@@ -46,6 +47,8 @@ public class DetailActivity extends AppCompatActivity {
     private void loadViews(GitRepository repository) {
         mOwnerTextView.setText(repository.getOwner().getLogin());
         mOwnerTypeTextView.setText(repository.getOwner().getType());
+
+        Glide.with(this).load(repository.getOwner().getAvatarUrl()).into(mPictureImageView); // I could have used Picasso also
 
         mNameTextView.setText(repository.getFullName());
         mLanguageTextView.setText(repository.getLanguage());
