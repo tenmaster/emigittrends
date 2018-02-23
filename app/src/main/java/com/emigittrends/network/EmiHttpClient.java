@@ -1,6 +1,9 @@
 package com.emigittrends.network;
 
+import android.util.Log;
+
 import com.emigittrends.model.GitRepository;
+import com.emigittrends.model.HotRespositoriesResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -32,16 +35,17 @@ public class EmiHttpClient {
         gitHubService = EmiGitAPI.retrofit.create(EmiGitAPI.class);
     }
 
-    private static void getHotRepositories(){
-        Call<List<GitRepository>> call = gitHubService.getRepositories();
-        call.enqueue(new Callback<List<GitRepository>>() {
+    public void getHotRepositories(){
+        Call<HotRespositoriesResponse> call = gitHubService.getRepositories();
+        call.enqueue(new Callback<HotRespositoriesResponse>() {
             @Override
-            public void onResponse(Call<List<GitRepository>> call, Response<List<GitRepository>> response) {
-
+            public void onResponse(Call<HotRespositoriesResponse> call, Response<HotRespositoriesResponse> response) {
+                Log.d("request", "Success!");
             }
 
             @Override
-            public void onFailure(Call<List<GitRepository>> call, Throwable t) {
+            public void onFailure(Call<HotRespositoriesResponse> call, Throwable t) {
+                Log.d("request", "Failure!");
 
             }
         });

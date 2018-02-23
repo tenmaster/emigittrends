@@ -1,9 +1,10 @@
 package com.emigittrends.network;
 
-import com.emigittrends.model.GitRepository;
+import com.emigittrends.model.HotRespositoriesResponse;
 
-import java.util.List;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -16,11 +17,13 @@ import retrofit2.http.GET;
 public interface EmiGitAPI {
 
     @GET("/search/repositories?q=pushed:>2018-02-01&sort=stars&order=desc\n")
-    Call<List<GitRepository>> getRepositories();
+    Call<HotRespositoriesResponse> getRepositories();
+
+    HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
+    OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.github.com/")
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create()).client(okHttpClient)
             .build();
-
 }
