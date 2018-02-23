@@ -11,6 +11,9 @@ import com.emigittrends.model.GitRepository;
 import java.util.ArrayList;
 import com.emigittrends.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by emiliano on 23/02/18.
  */
@@ -20,13 +23,12 @@ public class MainRepositoriesAdapter extends RecyclerView.Adapter<MainRepositori
     private ArrayList<GitRepository> mRepositoriesDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mRepositoryNameTextview;
-        public TextView mRepositoryStarsTextview;
+        @BindView(R.id.item_repository_title) TextView mRepositoryNameTextview;
+        @BindView(R.id.item_repository_stars) TextView mRepositoryStarsTextview;
 
         public ViewHolder(View view) {
             super(view);
-            this.mRepositoryNameTextview = view.findViewById(R.id.item_repository_title);
-            this.mRepositoryStarsTextview = view.findViewById(R.id.item_repository_stars);
+            ButterKnife.bind(this, view);
         }
     }
 
