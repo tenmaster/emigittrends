@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Emi Git Trends</string>
+    <string name="error_loading_repositories">Error on the getHotRepositories() method</string>
 </resources>
