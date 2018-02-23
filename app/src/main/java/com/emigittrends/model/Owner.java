@@ -14,6 +14,8 @@ public class Owner implements Serializable {
     String login;
     @SerializedName("avatar_url")
     String avatarUrl;
+    @SerializedName("type")
+    String type;
 
     public String getLogin() {
         return login;
@@ -23,4 +25,7 @@ public class Owner implements Serializable {
         return avatarUrl;
     }
 
+    public String getType() {
+        return type;
+    }
 }

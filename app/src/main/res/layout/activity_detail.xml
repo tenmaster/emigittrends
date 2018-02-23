@@ -2,7 +2,100 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_background"
+    android:layout_margin="@dimen/detail_main_margin"
+    android:padding="@dimen/detail_main_margin"
     tools:context="com.emigittrends.activities.DetailActivity">
+
+    <ImageView
+        android:id="@+id/detail_picture_imageview"
+        android:layout_width="@dimen/profile_pic_size"
+        android:scaleType="fitCenter"
+        android:layout_height="@dimen/profile_pic_size"
+        android:src="@drawable/empty_profile_pic"/>
+
+    <TextView
+        android:id="@+id/detail_owner_textview"
+        style="@style/detail_titles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/detail_picture_imageview"
+        android:layout_toEndOf="@+id/detail_picture_imageview"
+        android:layout_toRightOf="@+id/detail_picture_imageview"
+        tools:text="Username" />
+
+    <TextView
+        android:id="@+id/detail_ownertype_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detail_titles"
+        android:layout_below="@+id/detail_owner_textview"
+        android:layout_toEndOf="@+id/detail_picture_imageview"
+        android:layout_toRightOf="@+id/detail_picture_imageview"
+        tools:text="Type" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_picture_imageview"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/detail_main_margin"
+            android:layout_marginBottom="@dimen/detail_inline_margin"
+
+            android:background="#B1BCBE"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/detail_description"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/detail_name_textview"
+            tools:text="Repo Name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/detail_description"
+            android:id="@+id/detail_language_textview"
+            android:textColor="@color/colorPrimary"
+            tools:text="Java"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/detail_description"
+            android:id="@+id/detail_description_textview"
+            tools:text="Description"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/detail_description"
+            android:id="@+id/detail_watchers_textview"
+            tools:text="Watchers: 2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/detail_description"
+            android:id="@+id/detail_starred_textview"
+            tools:text="Starred: 3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/detail_description"
+            android:id="@+id/detail_forks_textview"
+            tools:text="Forks: 5"/>
+
+    </LinearLayout>
+
+
+
 
 </RelativeLayout>
