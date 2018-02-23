@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_size">60dp</dimen>
+    <dimen name="repositories_item_padding">15dp</dimen>
+    <dimen name="repositories_item_margin">5dp</dimen>
+    <dimen name="repositories_item_drawable_padding">2dp</dimen>
+</resources>
