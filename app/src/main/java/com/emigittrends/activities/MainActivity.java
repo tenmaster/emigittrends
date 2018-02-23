@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements HttpClientListene
 
     @Override
     public void onRepositoriesRequestSuccess(ArrayList<GitRepository> repositories) {
-        mRecyclerView.setAdapter(new MainRepositoriesAdapter(repositories));
+        mRecyclerView.setAdapter(new MainRepositoriesAdapter(this, repositories));
         mRecyclerView.setVisibility(View.VISIBLE);
         mProgressBar.setVisibility(View.GONE);
     }

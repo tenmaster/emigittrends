@@ -1,11 +1,15 @@
 package com.emigittrends.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.emigittrends.activities.DetailActivity;
 import com.emigittrends.model.GitRepository;
 
 import java.util.ArrayList;
@@ -20,7 +24,8 @@ import butterknife.ButterKnife;
 
 public class MainRepositoriesAdapter extends RecyclerView.Adapter<MainRepositoriesAdapter.ViewHolder> {
 
-    private ArrayList<GitRepository> mRepositoriesDataset;
+    private static ArrayList<GitRepository> mRepositoriesDataset;
+    public static Context mContext;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.item_repository_title) TextView mRepositoryNameTextview;
@@ -28,11 +33,19 @@ public class MainRepositoriesAdapter extends RecyclerView.Adapter<MainRepositori
 
         public ViewHolder(View view) {
             super(view);
+            view.setOnClickListener(v -> onClick(v));
             ButterKnife.bind(this, view);
+        }
+
+        private void onClick(View v) {
+            Intent detailActivity = new Intent(mContext, DetailActivity.class);
+            detailActivity.putExtra("Repository", mRepositoriesDataset.get(getAdapterPosition()));
+            mContext.startActivity(detailActivity);
         }
     }
 
-    public MainRepositoriesAdapter(ArrayList<GitRepository> mRepositoriesDataset) {
+    public MainRepositoriesAdapter(Context context, ArrayList<GitRepository> mRepositoriesDataset) {
+        mContext = context;
         this.mRepositoriesDataset = mRepositoriesDataset;
     }
 
